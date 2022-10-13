@@ -1,6 +1,12 @@
 {
   "users": [
+    {
+      "firstName": "Dano",
+      "lastName": "McKenzie",
+      "email": "danomckenzie@gmail.com",
+      "password": "danomarie2",
+      "id": 1
+    }
   ],
-  "events": [
-  ]
+  "events": []
 }
