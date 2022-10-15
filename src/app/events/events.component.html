@@ -1,11 +1,66 @@
-
-
 <nav class="navbar navbar bg-light">
   <div class="container-fluid">
     <h1 style="color:dimgray" class="navbar-brand">Calendar App</h1>
       <div class="d-flex">
-        <button type="button" class="btn btn-primary mx-2">Events</button>
+        <button type="button" class="btn btn-primary mx-2" (click)="openPopup()">Create</button>
         <button routerLink="/login" type="button" class="btn btn-primary mx-2">Logout</button>
       </div>
   </div>
 </nav>
+
+<table class="table mt-2">
+  <thead>
+  <tr>
+    <th scope="col" >Date</th>
+    <th scope="col" >Event</th>
+    <th scope="col" >People</th>
+    <th scope="col" ></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of eventsData">
+      <td>{{row.date | date}}</td>
+      <td>{{row.event}}</td>
+      <td>{{row.people}}</td>
+      <td>
+        <button (click)="editEvent(row)" type="button" class="btn btn-outline-primary mx-1" (click)="openPopup()">Edit</button>
+        <button type="button" class="btn btn-outline-primary mx-1" (click)="deleteEvent(row)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" tabindex="-1" role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">New Event</h4>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Event</label>
+            <input type="text" formControlName="event" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Date</label>
+            <input type="date" formControlName="date"  class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">People</label>
+            <input type="text" formControlName="people"  class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+          </div>
+          <div>
+            <label for="exampleInputName" class="form-label">Notes</label>
+            <textarea  formControlName="notes"  class="form-control" id="textAreaExample" rows="4"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-secondary" (click)="closePopup()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="postEventDetails()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
