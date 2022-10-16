@@ -25,14 +25,15 @@ export class ApiService {
   }
 
   updateEvent(data: any, id: number) {
-    return this.http.put<any>("http://localhost:3000/events" + id, data)
+    return this.http.put<any>("http://localhost:3000/events/" + id, data)
       .pipe(map((res:any)=>{
         return res;
       }))
   }
 
   deleteEvent(id: number) {
-    return this.http.delete<any>("http://localhost:3000/events" + id)
+    console.log(id)
+    return this.http.delete<any>("http://localhost:3000/events/" + id)
       .pipe(map((res:any)=>{
         return res;
       }))

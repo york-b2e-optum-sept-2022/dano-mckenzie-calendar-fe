@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <h1 style="color:dimgray" class="navbar-brand">Calendar App</h1>
       <div class="d-flex">
-        <button type="button" class="btn btn-primary mx-2" (click)="openPopup()">Create</button>
+        <button type="button" class="btn btn-primary mx-2" (click)="eventAdded()" (click)="openPopup()">Create</button>
         <button routerLink="/login" type="button" class="btn btn-primary mx-2">Logout</button>
       </div>
   </div>
@@ -59,7 +59,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="close" class="btn btn-secondary" (click)="closePopup()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="postEventDetails()">Save changes</button>
+        <button *ngIf="toggleCreate" type="button" class="btn btn-primary" (click)="postEventDetails()">Create</button>
+        <button *ngIf="toggleUpdate" type="button" class="btn btn-primary" (click)="updateEventDetails()">Edit</button>
       </div>
     </div>
   </div>

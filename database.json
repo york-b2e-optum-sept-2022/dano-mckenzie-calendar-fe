@@ -39,7 +39,7 @@
   "events": [
     {
       "id": 1,
-      "event": "This Event",
+      "event": "These Events",
       "date": "2022-10-21",
       "people": "Dano",
       "notes": "First Try"
