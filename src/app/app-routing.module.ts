@@ -6,7 +6,7 @@ import {AppComponent} from "./app.component";
 import {EventsComponent} from "./events/events.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'app', pathMatch:'full'},
+  {path: '', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component:LoginComponent},
   {path: 'registration', component:RegistrationComponent},
   {path: 'app', component:AppComponent},

@@ -1,27 +1,6 @@
 {
   "users": [
     {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": "",
-      "id": 1
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": "",
-      "id": 2
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": "",
-      "id": 3
-    },
-    {
       "firstName": "Dano",
       "lastName": "McKenzie",
       "email": "danomckenzie@gmail.com",
@@ -34,12 +13,47 @@
       "email": "danomckenzie@gmail.com",
       "password": "danomarie2",
       "id": 5
+    },
+    {
+      "firstName": "James",
+      "lastName": "Doe",
+      "email": "jdoe@gmail.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "firstName": "Dam",
+      "lastName": "Man",
+      "email": "dman@gmail.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "firstName": "Dam",
+      "lastName": "Man",
+      "email": "dman@gmail.com",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "firstName": "Bee",
+      "lastName": "Happy",
+      "email": "bhappy@gmail.com",
+      "password": "buzz",
+      "id": 9
+    },
+    {
+      "firstName": "Jackson",
+      "lastName": "Hoberman",
+      "email": "jman@gmail.com",
+      "password": "jackjack",
+      "id": 10
     }
   ],
   "events": [
     {
       "id": 1,
-      "event": "These Events",
+      "event": "This Event",
       "date": "2022-10-21",
       "people": "Dano",
       "notes": "First Try"
@@ -50,6 +64,13 @@
       "date": "2022-10-29",
       "people": "Dano",
       "notes": "Second test to close window"
+    },
+    {
+      "id": 3,
+      "event": "One",
+      "date": "2022-11-16",
+      "people": "James",
+      "notes": "testing"
     }
   ]
 }

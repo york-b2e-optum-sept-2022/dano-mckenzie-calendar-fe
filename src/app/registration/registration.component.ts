@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from "@angular/forms";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 
@@ -15,18 +15,20 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.regForm = this.formBuilder.group({
-      firstName:[''],
-      lastName:[''],
-      email:[''],
-      password:['']
+      firstName:['', Validators.required],
+      lastName:['',Validators.required],
+      email:['', Validators.required],
+      password:['', Validators.required]
     })
   }
 
+  //posts inputed user information from the registration form to the database using .post
   register() {
     this.http.post<any>("http://localhost:3000/users", this.regForm.value)
       .subscribe( res => {
         alert("You're all signed up!");
         this.regForm.reset();
+        //form resets and navigates to the login page using routing
         this.router.navigate(['login']);
       }, err=> {
         alert("Oops! Something went wrong.")

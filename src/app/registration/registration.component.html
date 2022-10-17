@@ -9,26 +9,25 @@
           <form [formGroup]="regForm" (ngSubmit)="register()">
             <div class="mb-3">
               <label for="exampleInputFName" class="form-label">First Name</label>
-              <input formControlName="firstName" type="text" class="form-control" id="exampleInputFName">
+              <input formControlName="firstName" type="text" class="form-control" id="exampleInputFName" placeholder="First Name">
+              <span class="text-primary" *ngIf="regForm.controls['firstName'].dirty && regForm.hasError('required','firstName')">First name is required.</span>
             </div>
             <div class="mb-3">
               <label for="exampleInputLName" class="form-label">Last Name</label>
-              <input formControlName="lastName" type="text" class="form-control" id="exampleInputLName">
+              <input formControlName="lastName" type="text" class="form-control" id="exampleInputLName"  placeholder="Last Name">
+              <span class="text-primary" *ngIf="regForm.controls['lastName'].dirty && regForm.hasError('required','lastName')">Last name is required.</span>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text"></div>
+              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <span class="text-primary" *ngIf="regForm.controls['email'].dirty && regForm.hasError('required','email')">Email address is required.</span>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"  placeholder="Password">
+              <span class="text-primary" *ngIf="regForm.controls['password'].dirty && regForm.hasError('required','password')">Password is required.</span>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword2" class="form-label">Re-Enter Password</label>
-              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword2">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button [disabled]="!regForm.valid" type="submit" class="btn btn-primary">Sign Up</button>
           </form>
           <a routerLink="/login">Not New? Login Here</a>
         </form>

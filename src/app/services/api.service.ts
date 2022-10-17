@@ -11,7 +11,7 @@ export class ApiService {
   }
 
   postEvent(data : any) {
-    return this.http.post<any>("http://localhost:3000/events", data)
+    return this.http.post<any>("http://localhost:3000/events/", data)
       .pipe(map((res:any)=>{
         return res;
       }))
