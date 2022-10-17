@@ -1,5 +1,7 @@
 # CalendarApp
 
+HELLO YORK TA!! I have my final commit on the branch named "Final". I did not want to risk overriding my previous commits on the master/origin branch and lose work or a previous version. Thank you for your time!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 ## Development server
