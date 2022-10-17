@@ -19,7 +19,8 @@
   </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of eventsData">
+  <!-- Used NGX orderBy piping to sort by date -->
+    <tr *ngFor="let row of eventsData | orderBy: 'date' ">
       <td>{{row.date | date}}</td>
       <td>{{row.event}}</td>
       <td>{{row.people}}</td>
@@ -79,23 +80,25 @@
         <form [formGroup]="formValue">
           <div class="mb-3">
             <label for="exampleInputEmail" class="form-label">Event</label>
-            <input type="text" [readonly]="true" formControlName="event" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+            <input type="text" formControlName="event" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Date</label>
-            <input type="date" [readonly]="true" formControlName="date"  class="form-control" id="exampleInputPassword2">
+            <input type="date" formControlName="date"  class="form-control" id="exampleInputPassword2">
           </div>
           <div class="mb-3">
             <label for="exampleInputName" class="form-label">People</label>
-            <input type="text" [readonly]="true" formControlName="people"  class="form-control" id="exampleInputName2" aria-describedby="emailHelp">
+            <input type="text" formControlName="people"  class="form-control" id="exampleInputName2" aria-describedby="emailHelp">
           </div>
           <div>
             <label for="exampleInputName" class="form-label">Notes</label>
-            <textarea  [readonly]="true" formControlName="notes"  class="form-control" id="textAreaExample2" rows="4"></textarea>
+            <textarea formControlName="notes"  class="form-control" id="textAreaExample2" rows="4"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" id="closeView" class="btn btn-secondary" (click)="closePopup()">Close</button>
+        <button *ngIf="toggleCreate" type="button" class="btn btn-primary" (click)="postEventDetails()">Create</button>
+        <button *ngIf="toggleUpdate" type="button" class="btn btn-primary" (click)="updateEventDetails()">Edit</button>
       </div>
     </div>

@@ -16,6 +16,7 @@ export class EventsComponent implements OnInit {
   formValue!: FormGroup;
   eventsModelObject: EventsModel = new EventsModel();
   eventsData!: any;
+  //toggles which buttons appear depending on the event
   toggleCreate!: boolean;
   toggleUpdate!: boolean;
 
@@ -58,6 +59,8 @@ export class EventsComponent implements OnInit {
   }
 
   viewEvent(row: any) {
+    this.toggleCreate = false;
+    this.toggleUpdate = false;
 
     this.eventsModelObject.id = row.id;
     this.formValue.controls['event'].setValue(row.event);

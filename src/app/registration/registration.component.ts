@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
-  //posts inputed user information from the registration form to the database using .post
+  //posts user information from the registration form to the database using .post
   register() {
     this.http.post<any>("http://localhost:3000/users", this.regForm.value)
       .subscribe( res => {

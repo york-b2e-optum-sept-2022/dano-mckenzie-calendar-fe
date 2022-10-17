@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { EventsComponent } from './events/events.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
+import {OrderModule} from "ngx-order-pipe";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

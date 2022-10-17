@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {map} from 'rxjs/operators'
-import {v4 as uuid} from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +9,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) {
   }
+
+  //CRUD Operations for Events
 
   postEvent(data : any) {
     return this.http.post<any>("http://localhost:3000/events/", data)

@@ -48,29 +48,43 @@
       "email": "jman@gmail.com",
       "password": "jackjack",
       "id": 10
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jdoe@gmail.com",
+      "password": "123456",
+      "id": 11
     }
   ],
   "events": [
     {
-      "id": 1,
-      "event": "This Event",
-      "date": "2022-10-21",
+      "id": 6,
+      "event": "Netflix Payment",
+      "date": "2022-10-19",
       "people": "Dano",
-      "notes": "First Try"
+      "notes": "$16.11 Each month. Oof!"
     },
     {
-      "id": 2,
-      "event": "Second Test",
-      "date": "2022-10-29",
-      "people": "Dano",
-      "notes": "Second test to close window"
+      "id": 7,
+      "event": "Tyler's Birthday",
+      "date": "2022-10-18",
+      "people": "Dano, Tyler",
+      "notes": "Big Party in New Mexico!"
     },
     {
-      "id": 3,
-      "event": "One",
-      "date": "2022-11-16",
-      "people": "James",
-      "notes": "testing"
+      "id": 8,
+      "event": "Optum Start",
+      "date": "2022-12-12",
+      "people": "Dano",
+      "notes": "New Position, new horizons."
+    },
+    {
+      "id": 9,
+      "event": "Birthday! 🎂 ",
+      "date": "2022-10-14",
+      "people": "Dano, Jane",
+      "notes": "Yay! 😀 "
     }
   ]
 }
