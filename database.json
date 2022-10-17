@@ -6,55 +6,6 @@
       "email": "danomckenzie@gmail.com",
       "password": "danomarie2",
       "id": 4
-    },
-    {
-      "firstName": "Dano",
-      "lastName": "McKenzie",
-      "email": "danomckenzie@gmail.com",
-      "password": "danomarie2",
-      "id": 5
-    },
-    {
-      "firstName": "James",
-      "lastName": "Doe",
-      "email": "jdoe@gmail.com",
-      "password": "123456",
-      "id": 6
-    },
-    {
-      "firstName": "Dam",
-      "lastName": "Man",
-      "email": "dman@gmail.com",
-      "password": "123456",
-      "id": 7
-    },
-    {
-      "firstName": "Dam",
-      "lastName": "Man",
-      "email": "dman@gmail.com",
-      "password": "123456",
-      "id": 8
-    },
-    {
-      "firstName": "Bee",
-      "lastName": "Happy",
-      "email": "bhappy@gmail.com",
-      "password": "buzz",
-      "id": 9
-    },
-    {
-      "firstName": "Jackson",
-      "lastName": "Hoberman",
-      "email": "jman@gmail.com",
-      "password": "jackjack",
-      "id": 10
-    },
-    {
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "email": "jdoe@gmail.com",
-      "password": "123456",
-      "id": 11
     }
   ],
   "events": [
