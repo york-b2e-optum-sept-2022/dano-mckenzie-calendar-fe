@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {map} from 'rxjs/operators'
+import {v4 as uuid} from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,15 @@ export class ApiService {
   }
 
   getEvent() {
-    return this.http.get<any>("http://localhost:3000/events")
+    return this.http.get<any>("http://localhost:3000/events/")
+      .pipe(map((res:any)=>{
+        return res;
+      }))
+  }
+
+  viewEvent(id: number) {
+    console.log(id)
+    return this.http.get<any>("http://localhost:3000/events/" + id)
       .pipe(map((res:any)=>{
         return res;
       }))

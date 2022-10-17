@@ -57,6 +57,15 @@ export class EventsComponent implements OnInit {
       })
   }
 
+  viewEvent(row: any) {
+
+    this.eventsModelObject.id = row.id;
+    this.formValue.controls['event'].setValue(row.event);
+    this.formValue.controls['date'].setValue(row.date);
+    this.formValue.controls['people'].setValue(row.people);
+    this.formValue.controls['notes'].setValue(row.notes);
+  }
+
   eventAdded() {
     this.formValue.reset();
     this.toggleCreate = true;
