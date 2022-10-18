@@ -21,10 +21,12 @@
   <tbody>
   <!-- Used NGX orderBy piping to sort by date -->
     <tr *ngFor="let row of eventsData | orderBy: 'date' ">
+      <!-- used simple pipe to format date -->
       <td>{{row.date | date}}</td>
       <td>{{row.event}}</td>
       <td>{{row.people}}</td>
       <td>
+        <!--  -->
         <button (click)="viewEvent(row)" type="button" class="btn btn-outline-primary mx-1" (click)="openPopup()">View</button>
         <button (click)="editEvent(row)" type="button" class="btn btn-outline-success mx-1" (click)="openPopup()">Edit</button>
         <button type="button" class="btn btn-outline-danger mx-1" (click)="deleteEvent(row)">Delete</button>
@@ -33,6 +35,7 @@
   </tbody>
 </table>
 
+  <!--  -->
 <div class="modal" tabindex="-1" role="dialog"
   [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">
@@ -41,8 +44,10 @@
         <h4 class="modal-title">New Event</h4>
       </div>
       <div class="modal-body">
+        <!-- defines and group the set of controls used in this component -->
         <form [formGroup]="formValue">
           <div class="mb-3">
+            <!-- uses formControl to bind values--> -->
             <label for="exampleInputEmail" class="form-label">Event</label>
             <input type="text" formControlName="event" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
           </div>
@@ -62,6 +67,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="close" class="btn btn-secondary" (click)="closePopup()">Close</button>
+        <!-- binds to the formControl event to update and create new values -->
         <button *ngIf="toggleCreate" type="button" class="btn btn-primary" (click)="postEventDetails()">Create</button>
         <button *ngIf="toggleUpdate" type="button" class="btn btn-primary" (click)="updateEventDetails()">Edit</button>
       </div>
@@ -69,6 +75,7 @@
   </div>
 </div>
 
+  <!--  -->
 <div class="modal" tabindex="-1" role="dialog"
      [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">

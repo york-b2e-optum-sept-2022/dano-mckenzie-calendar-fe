@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+      <!--  -->
       <div class="card">
         <div class="text-center">
           <h1>Sign Up</h1>
         </div>
+        <!--  -->
         <form >
+          <!-- tracks changes the values by updated the grouped controls -->
+          <!-- used ngSubmit to bind to the submit event instead of click  -->
           <form [formGroup]="regForm" (ngSubmit)="register()">
             <div class="mb-3">
               <label for="exampleInputFName" class="form-label">First Name</label>
+              <!-- uses formControl to bind value of the firstName input-->
               <input formControlName="firstName" type="text" class="form-control" id="exampleInputFName" placeholder="First Name">
+              <!-- structural directive using formControl to render and handle built in constraint validation -->
+              <!-- .dirty means that the value of the input field is being changed -->
+              <!-- displays error "required" requires user to input the value of first name, checks if true -->
               <span class="text-primary" *ngIf="regForm.controls['firstName'].dirty && regForm.hasError('required','firstName')">First name is required.</span>
             </div>
             <div class="mb-3">
@@ -27,8 +35,10 @@
               <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"  placeholder="Password">
               <span class="text-primary" *ngIf="regForm.controls['password'].dirty && regForm.hasError('required','password')">Password is required.</span>
             </div>
+            <!--  -->
             <button [disabled]="!regForm.valid" type="submit" class="btn btn-primary">Sign Up</button>
           </form>
+          <!-- uses html link to route to different component, in this case, login -->
           <a routerLink="/login">Not New? Login Here</a>
         </form>
       </div>

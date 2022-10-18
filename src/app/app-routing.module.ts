@@ -5,7 +5,9 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {AppComponent} from "./app.component";
 import {EventsComponent} from "./events/events.component";
 
+//define the paths of my application components and routes them together
 const routes: Routes = [
+  //login is my default page, so application routes to this landing when opened
   {path: '', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component:LoginComponent},
   {path: 'registration', component:RegistrationComponent},

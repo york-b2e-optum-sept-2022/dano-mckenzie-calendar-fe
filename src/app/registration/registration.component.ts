@@ -14,6 +14,9 @@ export class RegistrationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    //uses validators to ensure correct information is inputted
+    //returns error if there is a problem, otherwise returns null and moves forward
+    //...with the input. validators.required is its own static method provided through forms
     this.regForm = this.formBuilder.group({
       firstName:['', Validators.required],
       lastName:['',Validators.required],
@@ -32,6 +35,7 @@ export class RegistrationComponent implements OnInit {
         this.router.navigate(['login']);
       }, err=> {
         alert("Oops! Something went wrong.")
+        //did not set custom error messages as I didn't want to break my subscriptions.
       })
   }
 

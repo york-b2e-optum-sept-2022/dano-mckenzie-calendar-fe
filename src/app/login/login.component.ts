@@ -10,11 +10,14 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
+  //explain FormGroup
   public loginForm!: FormGroup
+  //explain
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
+      //why validators?
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
       .subscribe(res=> {
         const user = res.find((a: any) => {
           return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-          //checks if email and password match database and returns
+          //checks value of loginForm email and password match database and returns
         });
         if(user) {
           alert("Login Success!");
